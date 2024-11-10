@@ -44,7 +44,24 @@ export default defineConfig({
 						}
 					}
 				]
-			}
+			},
+			{
+				test: /\.css$/,
+				use: [
+				  {
+					loader: 'postcss-loader',
+					options: {
+					  postcssOptions: {
+						plugins: {
+						  tailwindcss: {},
+						  autoprefixer: {},
+						},
+					  },
+					},
+				  },
+				],
+				type: 'css',
+			  },
 		]
 	},
 	plugins: [
