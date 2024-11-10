@@ -21,7 +21,7 @@
 ### ✒️ 引用技術
 
 - 框架: React
-- 样式: Tailwind CSSrr
+- 样式: Tailwind CSS
 - 测试: Vitest
 - AI: coze-api
 

@@ -1,0 +1,48 @@
+# 在main分支有新的推送时自动build
+name: Automatic build
+
+on:
+  # 仅在推送到默认分支时运行。
+  push:
+    branches: ['main']
+
+  # 这个选项可以使你手动在 Action tab 页面触发工作流
+  workflow_dispatch:
+
+# 设置权限。
+permissions:
+  contents: write
+
+# 允许并发
+concurrency:
+  group: 'build'
+  cancel-in-progress: true
+
+jobs:
+  # 单次build的工作描述
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          # 指定 Node.js 的版本为 20.15.1
+          node-version: 20.15.1
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        # 使用 pnpm 来安装依赖包
+        run: pnpm install
+      - name: Build
+        # 使用 pnpm 来构建项目
+        run: pnpm build
+      - name: Push to repository
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout -b build
+          git add -f dist/*
+          git commit -m "Build output"
+          git push -f origin build
