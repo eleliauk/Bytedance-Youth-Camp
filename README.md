@@ -5,7 +5,6 @@
   <br />
   <br />
 
-
 ![language](https://img.shields.io/github/languages/top/eleliauk/Bytedance-Youth-Camp
 ![last](https://img.shields.io/github/last-commit/eleliauk/Bytedance-Youth-Camp)
 
@@ -18,12 +17,13 @@
 </div>
 
 ## 🔖 项目导览
+
 ### ✒️ 引用技術
+
 - 框架: React
-- 样式: Tailwind CSS
+- 样式: Tailwind CSSrr
 - 测试: Vitest
 - AI: coze-api
-
 
 ### ✨ 提交规范
 
