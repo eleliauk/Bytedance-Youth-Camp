@@ -5,7 +5,7 @@
   <br />
   <br />
 
-![language](https://img.shields.io/github/languages/top/eleliauk/Bytedance-Youth-Camp
+![language](https://img.shields.io/github/languages/top/eleliauk/Bytedance-Youth-Camp)
 ![last](https://img.shields.io/github/last-commit/eleliauk/Bytedance-Youth-Camp)
 
 <a href="#" target="_blank">在线体验</a>
